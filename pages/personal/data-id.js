@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import styles from "../../styles/Heroes.module.css";
 
-export default function detailPage() {
+export default function DetailPage() {
     const router = useRouter();
     const { query } = router;
 

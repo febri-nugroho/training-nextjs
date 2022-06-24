@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import styles from "../../styles/Heroes.module.css";
 
-export default function detailPerson() {
+export default function DetailPerson() {
     const router = useRouter();
     const { query } = router;
 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Link from "next/link";
 import { person } from "../data";
 
-export default function heroes(){
+export default function Heroes(){
 	const [datalist, setData] = useState();
 	const callApi = async() => {
 		try {
@@ -22,22 +22,22 @@ export default function heroes(){
 
         <div>
 			<h2>Show Data</h2>
-			{/* <ol>
+			<ol>
 				{ datalist && datalist.map((data) =>
-					<li>
-						<Link href={{pathname: `./personal/${data.allies}`, 
+					<li key={ persons._id }>
+						<Link href={{pathname: `/personal/${data.allies}`, 
 								query: {
 									name: data.name,
 									position: data.position,
 									affiliation: data.affiliation,
 								}}}
-								as={`./personal/${data.allies}`}>
+								as={`/personal/${data.allies}`}>
 							<a>{ data.name }</a>
 						</Link>
 					</li>
 				)}
 				
-			</ol> */}
+			</ol>
 
             <h1>List Heroes</h1>
             <ol>
