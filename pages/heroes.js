@@ -1,10 +1,8 @@
-import { useRouter } from "next/router";
 import { useState } from 'react';
 import Link from "next/link";
 import { person } from "../data";
 
 export default function heroes(){
-    const router = useRouter();
 	const [datalist, setData] = useState();
 	const callApi = async() => {
 		try {
@@ -24,7 +22,7 @@ export default function heroes(){
 
         <div>
 			<h2>Show Data</h2>
-			<ol>
+			{/* <ol>
 				{ datalist && datalist.map((data) =>
 					<li>
 						<Link href={{pathname: `./personal/${data.allies}`, 
@@ -39,25 +37,25 @@ export default function heroes(){
 					</li>
 				)}
 				
-			</ol>
+			</ol> */}
 
-            {/* <h1>List Heroes</h1>
+            <h1>List Heroes</h1>
             <ol>
 				{ person.map((persons) =>
-				<li>
-				    <Link href={{pathname: `./personal/${persons.allies}`, 
+				<li key={ persons._id }>
+				    <Link href={{pathname: `/personal/${persons.allies}`, 
 								query:{ 
 									name: persons.name, 
 									gender: persons.gender, 
 									position: persons.position, 
 									profession: persons.profession,
 									imageUrl: persons.photoUrl }}} 
-								as ={`./personal/${persons.allies}`}>
+								as ={`/personal/${persons.allies}`}>
 								<a>{ persons.name }</a>
 							</Link>
 						</li>
 					)}
-			</ol> */}
+			</ol>
 
 			<style jsx>{`
 				ol {
