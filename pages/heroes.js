@@ -24,7 +24,7 @@ export default function Heroes(){
 			<h2>Show Data</h2>
 			<ol>
 				{ datalist && datalist.map((data) =>
-					<li key={ persons._id }>
+					<li key={ data.id }>
 						<Link href={{pathname: `/personal/${data.allies}`, 
 								query: {
 									name: data.name,
@@ -49,6 +49,7 @@ export default function Heroes(){
 									gender: persons.gender, 
 									position: persons.position, 
 									profession: persons.profession,
+									affiliation: persons.affiliation,
 									imageUrl: persons.photoUrl }}} 
 								as ={`/personal/${persons.allies}`}>
 								<a>{ persons.name }</a>
